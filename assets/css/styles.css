@@ -201,3 +201,10 @@ footer {
 .social-links i:hover {
     color: var(--secondary-background-color);
 }
+
+/* Social Media Icons */
+
+.fa-brands {
+    margin: 0 5px;
+    color: var(--primary-text-color);
+}
