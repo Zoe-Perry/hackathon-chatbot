@@ -181,3 +181,23 @@ footer {
     cursor: pointer;
     max-width: 500px;
 }
+
+/* Footer Styles */
+
+.footer {
+    margin-top: 5px;
+}
+
+.social-links {
+    bottom: 10px;
+    right: 10px;
+    color: var(--primary-text-color);
+    font-size: 32px;
+}
+
+.social-links i {
+    transition: color 1s ease;
+}
+.social-links i:hover {
+    color: var(--secondary-background-color);
+}
