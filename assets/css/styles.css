@@ -1,0 +1,11 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Jersey+10&display=swap');
+
+:root {
+    --primary-font: 'Doto', sans-serif;
+    --secondary-font: 'Jersey 10', sans-serif;
+    --primary-text-color: #ffffff;
+    --primary-background-color: #112223;
+    --secondary-text-color: black;
+    --secondary-background-color: #70797a;
+}
