@@ -30,7 +30,7 @@ function sendMessage() {
 
 async function fetchResponse(message, personality) {
   const system_message =  `You are a ${personality} teacher. Only answer what is asked. Do not ask follow-up questions.`
-  const placeholderKey = ""
+  let placeholderKey = ""
 
   const API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
