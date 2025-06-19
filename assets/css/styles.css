@@ -9,3 +9,22 @@
     --secondary-text-color: black;
     --secondary-background-color: #70797a;
 }
+
+/* General Styles */
+
+body {
+    padding-top: 50px;
+    /*padding-bottom: 10px;*/
+    background-color: var(--primary-background-color);
+    font-family: var(--primary-font);
+    color: var(--primary-text-color);
+
+}
+
+p {
+    font-family: var(--secondary-font);
+}
+
+footer {
+    padding-top: 25px;
+}
