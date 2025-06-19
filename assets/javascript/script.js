@@ -97,3 +97,13 @@ document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
     }
   });
 });
+
+function setkey(){
+  const key = document.getElementById("APIkey").value;
+  if (key.trim() !== "") {
+    localStorage.setItem("APIkey", key);
+    alert("API Key saved successfully!");
+  } else {
+    alert("Please enter a valid API Key.");
+  }
+}
