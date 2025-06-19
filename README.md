@@ -23,7 +23,27 @@
 A website created to host a chatbot named 'mistral' via an API. It allows the user to talk with one of the large language models (LLMs), similar to ChatGPT.
 
 ## UX Design Process
+
 ### User Stories
+
 ### Wireframes
+
 ### Color Schemes
+
 ### Fonts
+
+## Features
+
+## Improvements
+
+## Deployment
+
+## Testing and Validation
+
+## AI Implementation
+
+## References
+
+## Tech Used
+
+## Learning Points
