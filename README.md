@@ -2,7 +2,7 @@
 ## <center>A hackathon project created for code institute by David Barton, Zoe Perry and Thomas Brown</center>
 ![an image of the website]()
 
-### <center>[Link to the website]() </center>
+### <center>[Link to the website](https://zoe-perry.github.io/hackathon-chatbot/) </center>
 ## Index
 1. [Overview](#overview)
 2. [UX Design Process](#ux-design-process)
