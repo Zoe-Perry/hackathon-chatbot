@@ -168,3 +168,16 @@ footer {
     border: 6px solid #000000;
     border-radius: 22px;
 }
+
+/* Reset Button Styles */
+
+.reset-button {
+    margin-top: 40px;
+    font-weight: bold;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    border: 6px solid #000000;
+    border-radius: 22px;
+    cursor: pointer;
+    max-width: 500px;
+}
