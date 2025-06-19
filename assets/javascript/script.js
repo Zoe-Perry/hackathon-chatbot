@@ -30,57 +30,63 @@ function sendMessage() {
 
 async function fetchResponse(message, personality) {
   const system_message =  `You are a ${personality} teacher. Only answer what is asked. Do not ask follow-up questions.`
-  let placeholderKey = ""
+  let placeholderKey = localStorage.getItem("APIkey");
+  if (!placeholderKey) {
+    alert("Please set your API key in the Navbar.");
+  }else {
 
-  const API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
+    const API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
 
-  const HEADERS = { "Authorization": `Bearer ${placeholderKey}`, "Content-Type": "application/json"};
-  fetch(API_URL, {
-    method: "POST",
-    headers: HEADERS,
-    body: JSON.stringify({ inputs: `<s>[INST] <<SYS>>\n${system_message}\n<</SYS>>\n ${message} [/INST]` }),
-  })
-  .then(response => {
-  if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-  return response.json(); // ✅ parse response body as JSON
-  }).then(data => {
-    // Example: display the generated text
-    if (Array.isArray(data) && data[0]?.generated_text) {
-      const response = data[0].generated_text.split('[/INST]')[1]?.trim();
-      displayResponse(response);
-    } else {
-      console.warn("Unexpected response format:", data);
+    const HEADERS = { "Authorization": `Bearer ${placeholderKey}`, "Content-Type": "application/json"};
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: HEADERS,
+        body: JSON.stringify({ inputs: `<s>[INST] <<SYS>>\n${system_message}\n<</SYS>>\n ${message} [/INST]` }),
+      });
+
+      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+
+      const data = await response.json();
+
+      // Example: display the generated text
+      if (Array.isArray(data) && data[0]?.generated_text) {
+        const responseText = data[0].generated_text.split('[/INST]')[1]?.trim();
+        displayResponse(responseText);
+      } else {
+        console.warn("Unexpected response format:", data);
+        displayResponse("Unexpected response format from API.");
+      }
+    } catch (error) { 
+      console.error("Error fetching response:", error);
+      displayResponse("An error occurred while fetching the response. Please check your API key and try again.");
     }
-  })
-  .catch(error => {
-    console.error("Fetch error:", error);
-  });
-}
+  }
 
-function displayResponse(response) {
-  const messages = document.getElementById("chatMessages");
-  const now = new Date();
-  const time = now.toLocaleTimeString([], {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  function displayResponse(response) {
+    const messages = document.getElementById("chatMessages");
+    const now = new Date();
+    const time = now.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
 
-  const messageWrapper = document.createElement("div");
-  messageWrapper.classList.add("message", "bot");
+    const messageWrapper = document.createElement("div");
+    messageWrapper.classList.add("message", "bot");
 
-  const messageText = document.createElement("div");
-  messageText.textContent = response;
+    const messageText = document.createElement("div");
+    messageText.textContent = response;
 
-  const timestamp = document.createElement("div");
-  timestamp.classList.add("timestamp");
-  timestamp.textContent = time;
+    const timestamp = document.createElement("div");
+    timestamp.classList.add("timestamp");
+    timestamp.textContent = time;
 
-  messageWrapper.appendChild(messageText);
-  messageWrapper.appendChild(timestamp);
-  messages.appendChild(messageWrapper);
+    messageWrapper.appendChild(messageText);
+    messageWrapper.appendChild(timestamp);
+    messages.appendChild(messageWrapper);
 
-  messages.scrollTop = messages.scrollHeight;
-}
+    messages.scrollTop = messages.scrollHeight;
+}}
 
 // Dropdown functionality for the navbar
 document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
@@ -98,7 +104,7 @@ document.querySelectorAll(".navbar-collapse .nav-link").forEach((link) => {
   });
 });
 
-function setkey(){
+function setKey(){
   const key = document.getElementById("APIkey").value;
   if (key.trim() !== "") {
     localStorage.setItem("APIkey", key);
