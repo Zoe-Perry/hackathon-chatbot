@@ -1,0 +1,210 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Jersey+10&display=swap');
+
+:root {
+    --primary-font: 'Doto', sans-serif;
+    --secondary-font: 'Jersey 10', sans-serif;
+    --primary-text-color: #ffffff;
+    --primary-background-color: #112223;
+    --secondary-text-color: black;
+    --secondary-background-color: #70797a;
+}
+
+/* General Styles */
+
+body {
+    padding-top: 50px;
+    /*padding-bottom: 10px;*/
+    background-color: var(--primary-background-color);
+    font-family: var(--primary-font);
+    color: var(--primary-text-color);
+
+}
+
+p {
+    font-family: var(--secondary-font);
+}
+
+footer {
+    padding-top: 25px;
+}
+
+/* Navbar Styles */
+
+.navbar-brand,
+.navbar-nav .nav-link {
+  background: var(--primary-background-color);
+  border: none;
+  font-family: var(--primary-font);
+  color: var(--primary-text-color);
+}
+.navbar-nav {
+  background-color: var(--secondary-background-color);
+}
+
+.navbar-toggler {
+  background-color: var(--primary-background-color);
+  border: 6px solid var(--secondary-background-color);
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+  transition: color 1s ease;
+  color: var(--secondary-background-color);
+}
+.navbar-nav .nav-link.active {
+  color: var(--secondary-background-color);
+}
+
+@media (max-width: 767.98px) {
+  .navbar-collapse {
+    text-align: right;
+  }
+  .navbar-nav {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    align-items: flex-end !important;
+    width: 100%;
+    display: block !important;
+  }
+  .navbar-nav .nav-item {
+    width: 100%;
+  }
+  .navbar-nav .nav-link {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-right: 1rem;
+    padding-left: 0;
+  }
+}
+
+/* Chatbox Styles */
+
+.chatbox {
+    max-width: 500px;
+    margin: auto;
+    height: 500px;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: column;
+    border: 6px solid #000000;
+    border-radius: 22px;
+    overflow: hidden;
+    background-color: var(--secondary-background-color);
+    color: black;
+    font-weight: bold;
+}
+
+.chatbox-header {
+  padding: 0;
+  margin: 0;
+  background: var(--secondary-background-color);
+  width: 100%;
+  align-items: center;  
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: right;
+}
+
+.personality-dropdown {
+  border: none;
+  background: var(--secondary-background-color);
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  outline: none;
+  width: max-content;
+  box-sizing: border-box;
+}
+
+
+.chat-messages {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    font-weight: 700;
+    scroll-behavior: smooth;
+    overflow-wrap: break-word;
+}
+
+.message {
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.message.user {
+    text-align: right;
+}
+
+.chat-input {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    color: black;
+    /*justify-content: space-evenly;*/
+}
+
+.chat-input input {
+    border: none;
+    flex: 1;
+    min-width: 0;
+    padding: 10px;
+    font-weight: 700;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    border: 6px solid #000000;
+    border-radius: 22px;
+}
+
+.chat-input button {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    font-weight: 700;
+    background-color: var(--primary-background-color);
+    color: var(--primary-text-color);
+    border: 6px solid #000000;
+    border-radius: 22px;
+}
+
+/* Reset Button Styles */
+
+.reset-button {
+    margin-top: 40px;
+    font-weight: bold;
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    border: 6px solid #000000;
+    border-radius: 22px;
+    cursor: pointer;
+    max-width: 500px;
+}
+
+/* Footer Styles */
+
+.footer {
+    margin-top: 5px;
+}
+
+.social-links {
+    bottom: 10px;
+    right: 10px;
+    color: var(--primary-text-color);
+    font-size: 32px;
+}
+
+.social-links i {
+    transition: color 1s ease;
+}
+.social-links i:hover {
+    color: var(--secondary-background-color);
+}
+
+/* Social Media Icons */
+
+.fa-brands {
+    margin: 0 5px;
+    color: var(--primary-text-color);
+}
