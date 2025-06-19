@@ -58,10 +58,29 @@
         </div>
     </header>
     <!-- End Header-->
-
-
+     
     <main>
-
+        <!-- Chatbox Section -->
+        <div class="chatbox mt-5 shadow col-12 col-sm-6 col-lg-4 g-4 mx-auto">
+            <div class="chatbox-header">
+                <select id="ai-personality" class="personality-dropdown" aria-label="Select AI Personality">
+                    <option value="friendly">Friendly</option>
+                    <option value="professional">Professional</option>
+                    <option value="funny">Funny</option>
+                    <option value="serious">Serious</option>
+                    <!-- Add more personalities as needed -->
+                </select>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message">Hi there! How can I help?</div>
+                <div class="message user">What's the weather like today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" aria-label="Chat Input" placeholder="Type a message...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+        <!-- End Chatbox Section -->
     </main>
 
 
