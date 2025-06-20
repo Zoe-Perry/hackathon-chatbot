@@ -79,6 +79,9 @@ footer {
   }
 }
 
+#API-link{
+  font-family: var(--primary-font);
+}
 /* Chatbox Styles */
 
 .chatbox {
