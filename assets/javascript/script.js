@@ -1,3 +1,8 @@
+// Focus on input box on page load
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("chatInput").focus()
+})
+
 // Chat functionality
 function sendMessage() {
   const input = document.getElementById("chatInput");
@@ -25,6 +30,18 @@ function sendMessage() {
     messages.scrollTop = messages.scrollHeight;
     input.value = "";
     
+    const loadingIcon = document.createElement("div");
+    loadingIcon.setAttribute("id", "loading");
+    loadingIcon.innerHTML = `<div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>`;
+    messages.appendChild(loadingIcon);
   }
 }
 
@@ -64,7 +81,9 @@ async function fetchResponse(message, personality) {
   }
 
   function displayResponse(response) {
+        
     const messages = document.getElementById("chatMessages");
+    messages.removeChild(messages.lastChild);
     const now = new Date();
     const time = now.toLocaleTimeString([], {
       hour: "2-digit",
@@ -113,3 +132,14 @@ function setKey(){
     alert("Please enter a valid API Key.");
   }
 }
+
+function resetChat(){
+  const messages = document.getElementById("chatMessages");
+  messages.innerHTML = "";
+}
+
+ document.getElementById("chatInput").addEventListener("keydown",function(event){
+        if(event.key === "Enter"){
+            sendMessage();
+        }
+      })
