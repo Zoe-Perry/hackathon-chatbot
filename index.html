@@ -45,7 +45,8 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link" aria-label="API key" data-bs-toggle="modal" data-bs-target="#APIkeyModal">
+                        <button class="nav-link" aria-label="API key" data-bs-toggle="modal"
+                            data-bs-target="#APIkeyModal">
                             <h4>API Key</h4>
                         </button>
                     </li>
@@ -58,18 +59,19 @@
     <div class="modal" tabindex="-1" role="dialog" id="APIkeyModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Please enter a key to use this service</h5>
-            </div>
-            <div class="modal-body">
-                <p>If you need to get a key you can do so <a href="https://huggingface.co/">here</a>, or ask David for one.</p>
-            </div>
-            <div class="modal-footer">
-                <div class="chat-input">
-                    <input type="text" id="APIkey" aria-label="API key" >
-                    <button onclick="setKey()" data-bs-dismiss="modal">Send</button>
+                <div class="modal-header">
+                    <h5 class="modal-title">Please enter a key to use this service</h5>
                 </div>
-            </div>
+                <div class="modal-body">
+                    <p>If you need to get a key you can do so <a href="https://huggingface.co/">here</a>, or ask David
+                        for one.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="chat-input">
+                        <input type="text" id="APIkey" aria-label="API key">
+                        <button onclick="setKey()" data-bs-dismiss="modal">Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -99,6 +101,7 @@
             <div class="chat-messages" id="chatMessages">
                 <div class="message">Hi there! How can I help?</div>
             </div>
+            
             <div class="chat-input">
                 <input type="text" id="chatInput" aria-label="Chat Input" placeholder="Type a message...">
                 <button onclick="sendMessage()">Send</button>

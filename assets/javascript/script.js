@@ -25,6 +25,18 @@ function sendMessage() {
     messages.scrollTop = messages.scrollHeight;
     input.value = "";
     
+    const loadingIcon = document.createElement("div");
+    loadingIcon.setAttribute("id", "loading");
+    loadingIcon.innerHTML = `<div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow spinner-grow-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>`;
+    messages.appendChild(loadingIcon);
   }
 }
 
@@ -64,7 +76,9 @@ async function fetchResponse(message, personality) {
   }
 
   function displayResponse(response) {
+        
     const messages = document.getElementById("chatMessages");
+    messages.removeChild(messages.lastChild);
     const now = new Date();
     const time = now.toLocaleTimeString([], {
       hour: "2-digit",
