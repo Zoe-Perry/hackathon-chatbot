@@ -1,3 +1,8 @@
+// Focus on input box on page load
+document.addEventListener("DOMContentLoaded", function(){
+  document.getElementById("chatInput").focus()
+})
+
 // Chat functionality
 function sendMessage() {
   const input = document.getElementById("chatInput");
@@ -127,3 +132,14 @@ function setKey(){
     alert("Please enter a valid API Key.");
   }
 }
+
+function resetChat(){
+  const messages = document.getElementById("chatMessages");
+  messages.innerHTML = "";
+}
+
+ document.getElementById("chatInput").addEventListener("keydown",function(event){
+        if(event.key === "Enter"){
+            sendMessage();
+        }
+      })
