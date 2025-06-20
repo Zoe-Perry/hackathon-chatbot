@@ -24,7 +24,7 @@
 <body class="d-flex flex-column min-vh-100">
 
     <!--Navbar-->
-    <nav id="navbar" class="navbar navbar-expand fixed-top z-n1" aria-label="Main navigation" data-bs-theme="dark">
+    <nav id="navbar" class="navbar navbar-expand fixed-top" aria-label="Main navigation" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="assets/images/ChatBotAiLogo.webp"
                     class="logo" alt="Robot logo" width="80" height="70"></a>
@@ -45,9 +45,9 @@
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <button class="nav-link" aria-label="API key" data-bs-toggle="modal"
+                        <button class="nav-link " aria-label="API key" data-bs-toggle="modal"
                             data-bs-target="#APIkeyModal">
-                            <h4>API Key</h4>
+                            <span id="API-link" class="display-6"> API Key</span>
                         </button>
                     </li>
                 </ul>
@@ -79,7 +79,7 @@
 
     <!-- Header-->
     <header aria-label="AI Chat Bot">
-        <div class=" container-lg text-center my-5">
+        <div class=" container-lg text-center my-5 z-1">
             <h1>AI Chat - Bot <i class="fa-duotone fa-solid fa-robot"></i></h1>
             <h2>Simple AI Chat Bot</h2>
         </div>

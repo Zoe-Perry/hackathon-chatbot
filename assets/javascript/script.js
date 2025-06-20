@@ -1,6 +1,6 @@
 // Focus on input box on page load
 document.addEventListener("DOMContentLoaded", function(){
-  document.getElementById("chatInput").focus()
+  document.getElementById("chatInput").focus();
 })
 
 // Chat functionality
@@ -142,4 +142,4 @@ function resetChat(){
         if(event.key === "Enter"){
             sendMessage();
         }
-      })
+      });
