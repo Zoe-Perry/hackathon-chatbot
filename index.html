@@ -24,7 +24,7 @@
 <body class="d-flex flex-column min-vh-100">
 
     <!--Navbar-->
-    <nav id="navbar" class="navbar navbar-expand-md fixed-top" aria-label="Main navigation" data-bs-theme="dark">
+    <nav id="navbar" class="navbar navbar-expand fixed-top z-n1" aria-label="Main navigation" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><img src="assets/images/ChatBotAiLogo.png"
                     class="logo" alt="Robot logo" width="110" height="80"></a>
@@ -34,7 +34,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-md-auto">
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">
                             <h4>Chat AI</h4>
                         </a>
@@ -43,12 +43,39 @@
                         <a class="nav-link" href="" aria-label="Image AI">
                             <h4>Image AI</h4>
                         </a>
+                    </li> -->
+                    <li class="nav-item">
+                        <button class="nav-link" aria-label="API key" data-bs-toggle="modal"
+                            data-bs-target="#APIkeyModal">
+                            <h4>API Key</h4>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
     <!--End Navbar-->
+
+    <div class="modal" tabindex="-1" role="dialog" id="APIkeyModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Please enter a key to use this service</h5>
+                </div>
+                <div class="modal-body">
+                    <p>If you need to get a key ask David
+                        for one.</p>
+                </div>
+                <div class="modal-footer">
+                    <div class="chat-input">
+                        <input type="text" id="APIkey" aria-label="API key">
+                        <button onclick="setKey()" data-bs-dismiss="modal">Send</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <!-- Header-->
     <header aria-label="AI Chat Bot">
@@ -73,8 +100,8 @@
             </div>
             <div class="chat-messages" id="chatMessages">
                 <div class="message">Hi there! How can I help?</div>
-                <div class="message user">What's the weather like today?</div>
             </div>
+            
             <div class="chat-input">
                 <input type="text" id="chatInput" aria-label="Chat Input" placeholder="Type a message...">
                 <button onclick="sendMessage()">Send</button>
@@ -83,8 +110,8 @@
         <!-- End Chatbox Section -->
 
         <!-- Reset Button -->
-        <div class="col-12 col-sm-6 col-lg-2 g-4 mx-auto row align-items-start">
-            <button type="button" class="reset-button btn btn-dark">Reset Chat</button>
+        <div class="col-12 col-sm-6 col-lg-2 g-4 mx-auto row align-items-start d-flex justify-content-center">
+            <button type="button" class="reset-button btn btn-dark" onclick="resetChat()">Reset Chat</button>
         </div>
         <!-- End Reset Button -->
     </main>
