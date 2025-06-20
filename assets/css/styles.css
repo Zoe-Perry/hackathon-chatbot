@@ -13,8 +13,8 @@
 /* General Styles */
 
 body {
-    padding-top: 50px;
-    /*padding-bottom: 10px;*/
+    /* padding-top: 50px; */
+    padding-bottom: 10px;
     background-color: var(--primary-background-color);
     font-family: var(--primary-font);
     color: var(--primary-text-color);
@@ -30,8 +30,17 @@ footer {
 }
 
 /* Navbar Styles */
+.navbar {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
 
-.navbar-brand,
+#API-link{
+  font-family: var(--primary-font);
+  font-size: 2rem;
+}
+
+/*.navbar-brand,
 .navbar-nav .nav-link {
   background: var(--primary-background-color);
   border: none;
@@ -45,21 +54,22 @@ footer {
 .navbar-toggler {
   background-color: var(--primary-background-color);
   border: 6px solid var(--secondary-background-color);
-}
-
+}*/
+/*
 .navbar-brand:hover,
 .navbar-nav .nav-link:hover {
   transition: color 1s ease;
   color: var(--secondary-background-color);
 }
+
 .navbar-nav .nav-link.active {
   color: var(--secondary-background-color);
-}
+}*/
 
 @media (max-width: 767.98px) {
-  .navbar-collapse {
+  /*.navbar-collapse {
     text-align: right;
-  }
+  }*/
   .navbar-nav {
     margin-left: auto !important;
     margin-right: 0 !important;
@@ -81,6 +91,7 @@ footer {
 
 #API-link{
   font-family: var(--primary-font);
+  font-size: 2rem;
 }
 /* Chatbox Styles */
 
