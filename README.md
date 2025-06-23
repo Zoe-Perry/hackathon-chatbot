@@ -93,14 +93,14 @@ The website is hosted via Github pages. To host your own website follow these st
 2. Click settings along the top of the options bar (the cog icon)
 3. Click the pages link on the left hand side - its at the bottom of the Code and automation subheading
 4. Under branch click which branch you want to go live with (most likely main) and then click save.
-5. Wait afew minutes and then click the link that should appear near the top of the screen and you will see your newly deployed website.
+5. Wait a few minutes and then click the link that should appear near the top of the screen and you will see your newly deployed website.
 6. You can unpublish at anytime by clicking the three dots icon and clicking Unpublish site
 
 
 ## Testing and Validation
 ![Lighthouse validation](/assets/readme/lighthouse.png)
 
-At first our lighthouse validation score was a lot lower, however after compressing our logo image and converting it a webp image, it reduced the load time of the page and greatly increased our performance score.
+At first our lighthouse validation score was a lot lower, however after compressing our logo image and converting it to a webp image, it reduced the load time of the page and greatly increased our performance score.
 
 ![HTML validation](/assets/readme/html-validation.png)
 
