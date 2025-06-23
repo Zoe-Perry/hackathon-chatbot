@@ -1,7 +1,8 @@
+/* jshint esversion: 11*/
 // Focus on input box on page load
 document.addEventListener("DOMContentLoaded", function(){
   document.getElementById("chatInput").focus();
-})
+});
 
 // Chat functionality
 function sendMessage() {
@@ -46,7 +47,7 @@ function sendMessage() {
 }
 
 async function fetchResponse(message, personality) {
-  const system_message =  `You are a ${personality} teacher. Only answer what is asked. Do not ask follow-up questions.`
+  const system_message =  `You are a ${personality} teacher. Only answer what is asked. Do not ask follow-up questions.`;
   let placeholderKey = localStorage.getItem("APIkey");
   if (!placeholderKey) {
     alert("Please set your API key in the Navbar.");
