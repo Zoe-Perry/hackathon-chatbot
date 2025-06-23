@@ -1,5 +1,5 @@
 # <center>hackathon-chatbot </center>
-## <center>A hackathon project created for code institute by David Barton, Zoe Perry and Thomas Brown</center>
+## <center>A hackathon project created for Code Institute by David Barton, Zoe Perry and Thomas Brown</center>
 ![an image of the website](/assets/readme/amiresponsive.png)
 
 ### <center>[Link to the website](https://zoe-perry.github.io/hackathon-chatbot/) </center>
@@ -159,4 +159,5 @@ However this wasn't entirely without issue, there were times where AI could not 
 ## Learning Points
 
 This project used a lot of pair programming to get our work done. We felt this worked the best for us and we worked efficiently as a team, however due to the nature of this style of work we struggled with allocating the workload perhaps as equally as we could've. Despite being happy with the work we produced and the method through which we created it, this is potentially a shortcoming in which we could work to be more equal in future projects.
+
 On top of this we were maybe a bit safe in the scope of our project, potentially due to the fear of merge conflicts causing issues within our project. With our confidence with merge conflicts increasing, in future projects we would likely now be able to increase the scope for a greater project, which could additionally assist with our previous point in allowing a greater split of workload with a greater scope.
