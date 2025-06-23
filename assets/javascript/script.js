@@ -13,7 +13,6 @@ function sendMessage() {
     const now = new Date();
     const time = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     const personality = document.getElementById("ai-personality").value;
-    fetchResponse(input.value, personality); // Call the function to fetch response
     const messageWrapper = document.createElement("div");
     messageWrapper.classList.add("message", "user");
 
@@ -43,6 +42,7 @@ function sendMessage() {
                     <span class="visually-hidden">Loading...</span>
                 </div>`;
     messages.appendChild(loadingIcon);
+    fetchResponse(input.value, personality); // Call the function to fetch response
   }
 }
 
@@ -50,7 +50,7 @@ async function fetchResponse(message, personality) {
   const system_message =  `You are a ${personality} teacher. Only answer what is asked. Do not ask follow-up questions.`;
   let placeholderKey = localStorage.getItem("APIkey");
   if (!placeholderKey) {
-    alert("Please set your API key in the Navbar.");
+    displayResponse("Please set your API key in the Navbar.");
   }else {
 
     const API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.3";
@@ -63,12 +63,12 @@ async function fetchResponse(message, personality) {
         body: JSON.stringify({ inputs: `<s>[INST] <<SYS>>\n${system_message}\n<</SYS>>\n ${message} [/INST]` }),
       });
 
-      if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+      if (!response.ok) displayResponse(`HTTP error! Status: ${response.status}`);
 
       const data = await response.json();
 
-      // Example: display the generated text
-      if (Array.isArray(data) && data[0]?.generated_text) {
+      // Extract the generated text from the response and display or an error message, the ? is thing called optional chaining, it checks if data[0] exists before trying to access generated_text
+      if (Array.isArray(data) && data[0]?.generated_text) { 
         const responseText = data[0].generated_text.split('[/INST]')[1]?.trim();
         displayResponse(responseText);
       } else {
