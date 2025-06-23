@@ -145,3 +145,7 @@ function resetChat(){
             sendMessage();
         }
       });
+
+function resetKey(){
+  localStorage.removeItem("APIkey");
+}
