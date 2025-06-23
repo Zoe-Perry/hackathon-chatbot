@@ -100,7 +100,7 @@ The website is hosted via Github pages. To host your own website follow these st
 ## Testing and Validation
 ![Lighthouse validation](/assets/readme/lighthouse.png)
 
-At first our lighthouse validation score was a lot lower, however after compressing our logo image and converting it a webp image, it reduced the load time of the page and greatly increased our performance score.
+At first our lighthouse validation score was a lot lower, however after compressing our logo image and converting it to a webp image, it reduced the load time of the page and greatly increased our performance score.
 
 ![HTML validation](/assets/readme/html-validation.png)
 
