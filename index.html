@@ -26,8 +26,8 @@
     <!--Navbar-->
     <nav id="navbar" class="navbar navbar-expand-sm mt-0 pt-0" aria-label="Main navigation" data-bs-theme="dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="assets/images/ChatBotAiLogo.webp"
-                    class="logo" alt="Robot logo"></a>
+            <a class="navbar-brand" href="index.html"><img src="assets/images/ChatBotAiLogo.webp" class="logo"
+                    alt="Robot logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -101,7 +101,7 @@
             <div class="chat-messages" id="chatMessages">
                 <div class="message">Hi there! How can I help?</div>
             </div>
-            
+
             <div class="chat-input">
                 <input type="text" id="chatInput" aria-label="Chat Input" placeholder="Type a message...">
                 <button onclick="sendMessage()">Send</button>
@@ -109,12 +109,9 @@
         </div>
         <!-- End Chatbox Section -->
 
-        <!-- Reset Button -->
-        <div class="col-12 col-sm-6 col-lg-2 g-4 mx-auto row align-items-start d-flex justify-content-center">
+        <!-- Reset Buttons -->
+        <div class="d-flex justify-content-center gap-2">
             <button type="button" class="reset-button btn btn-dark" onclick="resetChat()">Reset Chat</button>
-        </div>
-
-        <div class="col-12 col-sm-6 col-lg-2 g-4 mx-auto row align-items-start d-flex justify-content-center">
             <button type="button" class="reset-button btn btn-dark" onclick="resetKey()">Reset Key</button>
         </div>
         <!-- End Reset Button -->
