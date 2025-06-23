@@ -28,7 +28,7 @@ function sendMessage() {
     messages.appendChild(messageWrapper);
 
     messages.scrollTop = messages.scrollHeight;
-    input.value = "";
+    
     
     const loadingIcon = document.createElement("div");
     loadingIcon.setAttribute("id", "loading");
@@ -43,6 +43,7 @@ function sendMessage() {
                 </div>`;
     messages.appendChild(loadingIcon);
     fetchResponse(input.value, personality); // Call the function to fetch response
+    input.value = "";
   }
 }
 
